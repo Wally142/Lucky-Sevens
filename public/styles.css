@@ -7,3 +7,11 @@
   border: 2px solid green;
   padding: 3px;
 }
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2
+}
+
+.title {
+  color: rgb(181, 26, 26);
+}
