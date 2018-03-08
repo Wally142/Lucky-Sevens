@@ -1,0 +1,9 @@
+.lucky {
+    text-align: center;
+    }
+
+.bet {
+  box-sizing: border-box;
+  border: 2px solid green;
+  padding: 3px;
+}
