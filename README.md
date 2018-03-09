@@ -1,6 +1,6 @@
 # Lucky-Sevens
 
-Requirements
+ # Requirements
 The game should be laid out like this:
 Lucky Sevens Starting Screen - Laid out in three lines:
 
@@ -24,7 +24,7 @@ Lucky Sevens Starting Screen - Laid out in three lines:
 
 [X] When the game is over, display the following output:
 
-Results screen layout - 6 rows of layout:
+# Results screen layout - 6 rows of layout:
 [X] 1st row - Lucky Sevens header
 [X] 2nd row - 'Starting Bet' label and textbox for starting bet
 [X] 3rd row - 'Play' button has its label changed to 'Play Again'
@@ -32,7 +32,7 @@ Results screen layout - 6 rows of layout:
 [X] 5th row - Results header
 [X] 6th row - Table of results
 
-The table of results includes:
+# The table of results includes:
 [X] Starting bet label and amount
 [X] Total rolls before going broke label and amount
 [X] Highest amount won label and amount
