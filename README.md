@@ -20,9 +20,9 @@ Lucky Sevens Starting Screen - Laid out in three lines:
 
 [X] The program keeps track of the maximum amount of money held by the player.
 
-[] The program keeps track of how many rolls were taken at the point when the user    held the most money.
+[X] The program keeps track of how many rolls were taken at the point when the user    held the most money.
 
-[] When the game is over, display the following output:
+[X] When the game is over, display the following output:
 
 Results screen layout - 6 rows of layout:
 [X] 1st row - Lucky Sevens header

@@ -1,7 +1,6 @@
-let rolls = [];
+let rollCount = 0;
 let maxBet = [];
-let moneyHighRolls = [];
-
+let bankHigh = [];
 
 let startingBet = function () {
     let money = parseInt(prompt('How much money will you risk?'));
@@ -14,7 +13,7 @@ let startingBet = function () {
     }
     else {
         document.getElementById("amount").innerHTML = `$${money}.00`;
-        document.getElementById("head2").innerHTML = `$${money}.00` ;
+        document.getElementById("head2").innerHTML = `$${money}.00`;
         let bankroll = money;
         while (bankroll > 0) {
             let dice1 = Math.ceil(Math.random() * (1 + 6 - 1));
@@ -23,22 +22,31 @@ let startingBet = function () {
 
             if (diceRoll === 7) {
                 bankroll += 4;
-                rolls.push(diceRoll);
-                console.log(bankroll);
                 maxBet.push(bankroll);
-                
+                // console.log(bankroll);
+                rollCount++
             } else {
                 bankroll--
-                rolls.push(diceRoll);
-                console.log(bankroll);
+                maxBet.push(bankroll);
+                // console.log(bankroll);
+                rollCount++
             }
-            if (bankroll === 0) {
+            if (bankroll === Math.max.apply(null, maxBet)) {
+                // console.log(rollCount);
+                bankHigh.push(rollCount);
+            }
+            else if (bankroll === 0) {
                 let max = Math.max.apply(null, maxBet)
-                document.getElementById("total1").innerHTML = (rolls.length-1);
+                let maxValue = Math.max.apply(null, bankHigh)
+                document.getElementById("total1").innerHTML = (rollCount - 1);
                 document.getElementById("total2").innerHTML = max;
-                document.getElementById("total3").innerHTML = '7';
-                console.log(rolls.length-1);
-                console.log(Math.max.apply(null, maxBet));
+                document.getElementById("total3").innerHTML = maxValue;
+                console.log(rollCount - 1);
+                console.log(max);
+                console.log(maxValue);
+                rollCount = 0
+                maxBet = [];
+                bankHigh =[];
             }
         }
     }
@@ -51,7 +59,7 @@ function diceRoll() {
     addToDom();
 }
 
-function addToDom () {
+function addToDom() {
     document.getElementById("btn").innerHTML = "Play Again";
     document.getElementById("line").innerHTML = '<hr>';
     document.getElementById("header").innerHTML = 'Results';
@@ -60,6 +68,8 @@ function addToDom () {
     document.getElementById("result2").innerHTML = 'Highest Amount Won';
     document.getElementById("result3").innerHTML = 'Roll Count At Highest Amount Won';
 }
+
+
 
 
 
