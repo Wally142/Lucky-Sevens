@@ -2,9 +2,9 @@ let rollCount = 0;
 let maxBet = [];
 let bankHigh = [];
 
-let startingBet = function () {
+let startGame = function () {
     let money = parseInt(prompt('How much money will you risk?'));
-
+    // Error handling to make sure a number is input as well as it being greater than 0
     if ((isNaN(money))) {
         alert('Error, That is not a valid bet, enter a number!');
     }
@@ -12,6 +12,7 @@ let startingBet = function () {
         alert('Error, Please enter a number greater than zero');
     }
     else {
+        //if a number is added then the game is played
         document.getElementById("amount").innerHTML = `$${money}.00`;
         document.getElementById("head2").innerHTML = `$${money}.00`;
         let bankroll = money;
@@ -41,9 +42,10 @@ let startingBet = function () {
                 document.getElementById("total1").innerHTML = (rollCount - 1);
                 document.getElementById("total2").innerHTML = max;
                 document.getElementById("total3").innerHTML = maxValue;
-                console.log(rollCount - 1);
+                console.log(rollCount - 1);// the - 1 accounts for not being able to roll with 0 dollars
                 console.log(max);
                 console.log(maxValue);
+                //variables reset to 0 to start the game over
                 rollCount = 0
                 maxBet = [];
                 bankHigh =[];
@@ -54,8 +56,8 @@ let startingBet = function () {
 
 document.getElementById("btn").addEventListener("click", diceRoll);
 
-function diceRoll() {
-    startingBet();
+function diceRoll() { // starts the game and adds html/table to the dom with game results/data
+    startGame();
     addToDom();
 }
 
