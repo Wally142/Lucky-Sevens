@@ -4,7 +4,7 @@ let bankHigh = [];
 
 let startGame = function () {
     let money = parseInt(prompt('How much money will you risk?'));
-    // Error handling to make sure a number is input as well as it being greater than 0
+    // Error handling to make sure a string is not entered, as well as it being a number greater than 0
     if ((isNaN(money))) {
         alert('Error, That is not a valid bet, enter a number!');
     }
@@ -61,7 +61,7 @@ function diceRoll() { // starts the game and adds html/table to the dom with gam
     addToDom();
 }
 
-function addToDom() {
+function addToDom() { //changes button to play again and creates table
     document.getElementById("btn").innerHTML = "Play Again";
     document.getElementById("line").innerHTML = '<hr>';
     document.getElementById("header").innerHTML = 'Results';
