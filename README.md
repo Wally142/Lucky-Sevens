@@ -1,4 +1,5 @@
 # Lucky-Sevens
+Simple game to simulate dice rolling and project that was required to complete to get accepted into The Software Guild and Dev10 Program at Genesis10
 
  ## Requirements
 The game should be laid out like this:
